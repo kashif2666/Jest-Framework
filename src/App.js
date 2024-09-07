@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <p>First React Test Case12</p>
+      <p>First React Test Case</p>
       <p>Kashif Anwar</p>
       <input
         type="text"
@@ -11,7 +11,6 @@ function App() {
         name="username"
         id="userId"
         value="Aman"
-        readOnly
       />
       <br />
       <br /> <br /> <br />
