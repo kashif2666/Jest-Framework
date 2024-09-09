@@ -1,9 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 import Users from "./Users";
+import handleOtherButton from "./helper";
 
 function App() {
   const [data, setData] = useState("");
+  const [data2, setData2] = useState("");
+  const handleButton = () => {
+    setData2("Hello");
+  };
+
   return (
     <div className="App">
       <p>First Jest Test Case</p>
@@ -24,10 +30,18 @@ function App() {
       /> */}
       <br /> <br />
       <h2>Test Button Click</h2>
-      <button onClick={() => setData("hello")}>Updated Data</button>
+      <button onClick={() => setData("hii")}>Updated Data</button>
       <h2>{data}</h2>
       <br />
       <Users />
+      <br /> <br />
+      <h2>Functional Component method Testing</h2>
+      <button data-testid="btn1" onClick={handleButton}>
+        Updated
+      </button>
+      <button onClick={handleOtherButton}>otherButton</button>
+      <h2>{data2}</h2>
+      <br />
       <br />
       <img
         title="Man In Weed"

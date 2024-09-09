@@ -2,6 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import renderer from "react-test-renderer";
 import App from "./App";
 import Users from "./Users";
+import handleOtherButton from "./helper";
 
 test("123 First React app case", () => {
   render(<App />);
@@ -128,9 +129,23 @@ test("On Click event testing", () => {
   expect(screen.getByText("hello")).toBeInTheDocument();
 });
 
-test.only("class component method testing", () => {
+test("class component method testing", () => {
   const componentData = renderer.create(<Users />).getInstance();
   let a = "test";
   let b = "extraText";
   expect(componentData.getUserList(a)).toMatch(a + b);
+});
+
+test.only("functional component method testing", () => {
+  render(<App />);
+
+  const btn = screen.getByTestId("btn1");
+
+  fireEvent.click(btn);
+  expect(screen.getByText("Hello")).toBeInTheDocument();
+});
+
+test.only("method testing case 2", () => {
+  render(<App />);
+  expect(handleOtherButton()).toMatch("hello");
 });

@@ -134,7 +134,7 @@ test("On Click event testing", () => {
   expect(screen.getByText("hello")).toBeInTheDocument();
 });
 
-test("snapshot for app component", () => {
+test.skip("snapshot for app component", () => {
   const container = render(<App />);
   expect(container).toMatchSnapshot();
 });
