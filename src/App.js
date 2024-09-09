@@ -15,12 +15,16 @@ function App() {
       /> */}
       <br />
       <br />
-      <h2>Test onChange event with Input text</h2>
-      <input
+      {/* <h2>Test onChange event with Input text</h2> */}
+      {/* <input
         type="text"
         onChange={(e) => setData(e.target.value + "test")}
         value={data}
-      />
+      /> */}
+      <br /> <br />
+      <h2>Test Button Click</h2>
+      <button onClick={() => setData("hello")}>Updated Data</button>
+      <h2>{data}</h2>
       <br /> <br />
       <img
         title="Man In Weed"

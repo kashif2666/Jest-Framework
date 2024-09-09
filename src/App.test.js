@@ -112,9 +112,16 @@ describe("Nested API test case group", () => {
   });
 });
 
-test.only("On Change event testing", () => {
+test("On Change event testing", () => {
   render(<App />);
   let input = screen.getByRole("textbox");
   fireEvent.change(input, { target: { value: "a" } });
   expect(input.value).toBe("atest");
+});
+
+test.only("On Click event testing", () => {
+  render(<App />);
+  let btn = screen.getByRole("button");
+  fireEvent.click(btn);
+  expect(screen.getByText("hello")).toBeInTheDocument();
 });
