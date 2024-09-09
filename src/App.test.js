@@ -1,5 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import renderer from "react-test-renderer";
 import App from "./App";
+import Users from "./Users";
 
 test("123 First React app case", () => {
   render(<App />);
@@ -119,9 +121,16 @@ test("On Change event testing", () => {
   expect(input.value).toBe("atest");
 });
 
-test.only("On Click event testing", () => {
+test("On Click event testing", () => {
   render(<App />);
   let btn = screen.getByRole("button");
   fireEvent.click(btn);
   expect(screen.getByText("hello")).toBeInTheDocument();
+});
+
+test.only("class component method testing", () => {
+  const componentData = renderer.create(<Users />).getInstance();
+  let a = "test";
+  let b = "extraText";
+  expect(componentData.getUserList(a)).toMatch(a + b);
 });

@@ -6,13 +6,13 @@ import cleanDb from "../service";
 //   console.log("-----------beforeAll-----------");
 // });
 
-beforeEach(() => {
-  console.log("-----------beforeEach-----------");
-});
+// beforeEach(() => {
+//   console.log("-----------beforeEach-----------");
+// });
 test.only("123 First React app case", () => {
   render(<App />);
-  const text = screen.getByText(/First React Test case/i);
-  const text2 = screen.getByText(/Kashif Anwar/i);
+  const text = screen.getByText(/First Jest Test case/i);
+  const text2 = screen.getByText(/Aman Anwar/i);
   const title = screen.getByTitle("Man In Weed");
   expect(text).toBeInTheDocument();
   expect(text2).toBeInTheDocument();
@@ -127,16 +127,21 @@ test("On Change event testing", () => {
   expect(input.value).toBe("atest");
 });
 
-test.only("On Click event testing", () => {
+test("On Click event testing", () => {
   render(<App />);
   let btn = screen.getByRole("button");
   fireEvent.click(btn);
   expect(screen.getByText("hello")).toBeInTheDocument();
 });
 
-afterAll(() => {
-  cleanDb();
+test("snapshot for app component", () => {
+  const container = render(<App />);
+  expect(container).toMatchSnapshot();
 });
+
+// afterAll(() => {
+//   cleanDb();
+// });
 
 // afterEach(() => {
 //   console.log("-----------AfterEach-----------");

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import Users from "./Users";
 
 function App() {
   const [data, setData] = useState("");
   return (
     <div className="App">
-      <p>First React Test Case</p>
-      <p>Kashif Anwar</p>
+      <p>First Jest Test Case</p>
+      <p>Aman Anwar</p>
       {/* <input
         type="text"
         placeholder="Enter username"
@@ -25,7 +26,9 @@ function App() {
       <h2>Test Button Click</h2>
       <button onClick={() => setData("hello")}>Updated Data</button>
       <h2>{data}</h2>
-      <br /> <br />
+      <br />
+      <Users />
+      <br />
       <img
         title="Man In Weed"
         src="https://plus.unsplash.com/premium_photo-1725024141611-52f6d3870816?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
