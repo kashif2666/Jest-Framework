@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import App from "./App";
 
 test("123 First React app case", () => {
@@ -110,4 +110,11 @@ describe("Nested API test case group", () => {
       expect(checkInput).toHaveAttribute("name", "username");
     });
   });
+});
+
+test.only("On Change event testing", () => {
+  render(<App />);
+  let input = screen.getByRole("textbox");
+  fireEvent.change(input, { target: { value: "a" } });
+  expect(input.value).toBe("atest");
 });
