@@ -1,7 +1,15 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import App from "../App";
+import cleanDb from "../service";
 
-test("123 First React app case", () => {
+// beforeAll(() => {
+//   console.log("-----------beforeAll-----------");
+// });
+
+beforeEach(() => {
+  console.log("-----------beforeEach-----------");
+});
+test.only("123 First React app case", () => {
   render(<App />);
   const text = screen.getByText(/First React Test case/i);
   const text2 = screen.getByText(/Kashif Anwar/i);
@@ -125,3 +133,11 @@ test.only("On Click event testing", () => {
   fireEvent.click(btn);
   expect(screen.getByText("hello")).toBeInTheDocument();
 });
+
+afterAll(() => {
+  cleanDb();
+});
+
+// afterEach(() => {
+//   console.log("-----------AfterEach-----------");
+// });
