@@ -10,7 +10,6 @@ function App() {
         placeholder="Enter username"
         name="username"
         id="userId"
-        value="Aman"
       />
       <br />
       <br /> <br /> <br />

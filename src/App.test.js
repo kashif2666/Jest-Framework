@@ -20,5 +20,94 @@ test("Testing Input Box", () => {
   expect(checkInput).toHaveAttribute("name", "username");
   expect(checkInput).toHaveAttribute("id", "userId");
   expect(checkInput).toHaveAttribute("type", "text");
-  expect(checkInput).toHaveAttribute("value", "Aman");
+});
+
+// grouping using describe, skip, only describe and nested describe
+
+describe("UI test case group", () => {
+  test("case 1", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  test("case 2", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  test("case 3", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+});
+
+// describe.only("API test case group", () => {
+//   test("api case 1", () => {
+//     render(<App />);
+//     let checkInput = screen.getByRole("textbox");
+//     expect(checkInput).toHaveAttribute("name", "username");
+//   });
+
+//   test("api case 2", () => {
+//     render(<App />);
+//     let checkInput = screen.getByRole("textbox");
+//     expect(checkInput).toHaveAttribute("name", "username");
+//   });
+
+//   test("api case 3", () => {
+//     render(<App />);
+//     let checkInput = screen.getByRole("textbox");
+//     expect(checkInput).toHaveAttribute("name", "username");
+//   });
+// });
+
+describe.skip("API test case group", () => {
+  test("api case 1", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  test("api case 2", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  test("api case 3", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+});
+
+describe("Nested API test case group", () => {
+  test("api case 1", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  test("api case 2", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  test("api case 3", () => {
+    render(<App />);
+    let checkInput = screen.getByRole("textbox");
+    expect(checkInput).toHaveAttribute("name", "username");
+  });
+
+  describe("inner describe", () => {
+    test("inner test case", () => {
+      render(<App />);
+      let checkInput = screen.getByRole("textbox");
+      expect(checkInput).toHaveAttribute("name", "username");
+    });
+  });
 });
