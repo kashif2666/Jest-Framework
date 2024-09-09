@@ -30,17 +30,22 @@ function App() {
       /> */}
       <br /> <br />
       <h2>Test Button Click</h2>
-      <button onClick={() => setData("hii")}>Updated Data</button>
+      {/* <button onClick={() => setData("hii")}>Updated Data</button>  */}
       <h2>{data}</h2>
       <br />
       <Users />
       <br /> <br />
       <h2>Functional Component method Testing</h2>
-      <button data-testid="btn1" onClick={handleButton}>
+      {/* <button data-testid="btn1" onClick={handleButton}>
         Updated
-      </button>
-      <button onClick={handleOtherButton}>otherButton</button>
+      </button> */}
+      {/* <button onClick={handleOtherButton}>otherButton</button>  */}
       <h2>{data2}</h2>
+      <br />
+      <br />
+      <h2>getByRole RTL Query</h2>
+      <input type="text" defaultValue="Kashif" disabled />
+      <button>Click Me</button>
       <br />
       <br />
       <img

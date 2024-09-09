@@ -136,7 +136,7 @@ test("class component method testing", () => {
   expect(componentData.getUserList(a)).toMatch(a + b);
 });
 
-test.only("functional component method testing", () => {
+test("functional component method testing", () => {
   render(<App />);
 
   const btn = screen.getByTestId("btn1");
@@ -145,7 +145,17 @@ test.only("functional component method testing", () => {
   expect(screen.getByText("Hello")).toBeInTheDocument();
 });
 
-test.only("method testing case 2", () => {
+test("method testing case 2", () => {
   render(<App />);
   expect(handleOtherButton()).toMatch("hello");
+});
+
+test.only("get By Role", () => {
+  render(<App />);
+  const btn = screen.getByRole("button");
+  const inputField = screen.getByRole("textbox");
+  expect(inputField).toBeInTheDocument();
+  expect(inputField).toHaveValue("Kashif");
+  expect(inputField).toBeDisabled();
+  expect(btn).toBeInTheDocument();
 });
